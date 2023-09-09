@@ -4,7 +4,7 @@
  * Index page default template.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 
 get_header();
@@ -25,7 +25,7 @@ get_header();
 			echo esc_html( get_the_date( 'F j, Y' ) );
 		}
 	}	else {
-		esc_html_e( 'Posts not found.', THEME_NAME );
+		esc_html_e( 'Posts not found.', 'maidz' );
 	}
 
 	if( get_next_posts_link() ) next_posts_link( '' );

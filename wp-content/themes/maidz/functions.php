@@ -4,10 +4,18 @@
  * Theme functions.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 
-define( 'THEME_NAME', 'critick' );
+/**
+ * Register Carbon Fields.
+ */
+add_action( 'carbon_fields_register_fields', function(){
+	require_once( 'carbon-fields/theme-settings.php' );
+	require_once( 'carbon-fields/sections.php' );
+} );
+
+const THEME_NAME = 'maidz';
 define( 'THEME_URI', get_template_directory_uri() );
 define( 'THEME_DIR', get_template_directory() );
 define( 'THEME_VERSION', mt_rand() );
@@ -16,11 +24,12 @@ add_action( 'after_setup_theme', 'critick_load_theme_dependencies' );
 /**
  * Theme dependencies.
  */
-function critick_load_theme_dependencies(){
+function critick_load_theme_dependencies(): void
+{
 	// Register theme menus.
 	register_nav_menus( [
-		'header_menu'	=> esc_html__( 'Header Menu', THEME_NAME ),
-		'footer_menu'	=> esc_html__( 'Footer Menu', THEME_NAME )
+		'header_menu'	=> esc_html__( 'Header Menu', 'maidz' ),
+		'footer_menu'	=> esc_html__( 'Footer Menu', 'maidz' )
 	] );
 
 	// Please place all custom functions declarations in this file.
@@ -31,7 +40,8 @@ add_action( 'init', 'critick_init_theme' );
 /**
  * Theme initialization.
  */
-function critick_init_theme(){
+function critick_init_theme(): void
+{
 	// Remove extra styles and default SVG tags.
 	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
@@ -47,7 +57,8 @@ add_action( 'wp_enqueue_scripts', 'critick_inclusion_enqueue' );
 /**
  * Enqueue styles and scripts.
  */
-function critick_inclusion_enqueue(){
+function critick_inclusion_enqueue(): void
+{
 	// Remove Gutenberg styles on front-end.
 	if( ! is_admin() ){
 		wp_dequeue_style( 'wp-block-library' );

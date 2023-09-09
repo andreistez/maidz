@@ -4,7 +4,7 @@
  * 404 page default template.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 
 get_header();

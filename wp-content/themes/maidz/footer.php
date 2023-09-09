@@ -4,7 +4,7 @@
  * Footer default template.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 ?>
 

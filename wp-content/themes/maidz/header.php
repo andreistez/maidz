@@ -4,7 +4,7 @@
  * Header default template.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 
 global $page, $paged;

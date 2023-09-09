@@ -4,7 +4,7 @@
  * Single post default template.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 
 get_header();
@@ -23,7 +23,7 @@ get_header();
 		 * 'content-<custom-post-type-name>'
 		 *
 		 * @example
-		 * critick/includes/single/content-portfolio.php for 'portfolio' custom post type.
+		 * maidz/includes/single/content-portfolio.php for 'portfolio' custom post type.
 		 */
 		get_template_part( 'template-parts/single/content', get_post_type() );
 	}

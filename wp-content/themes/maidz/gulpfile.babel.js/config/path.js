@@ -4,7 +4,7 @@ const pathDest  = './static'
 /**
  * ! IMPORTANT - Change pathRoot value to your local domain name.
  */
-const pathRoot = 'name.test/'
+const pathRoot = 'maidz.test/'
 
 export default {
 	root	: pathRoot,
