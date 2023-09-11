@@ -1,0 +1,330 @@
+@import '../components/vars';
+
+.hero {
+	padding: 140px 0 0;
+	background-color: $accent;
+
+	@media all and (min-width: $xl) {
+		padding: 190px 0 0;
+	}
+
+	.container {
+		max-width: 1260px;
+	}
+
+	&__headings {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 1010px;
+		margin: 0 auto;
+
+		@media all and (min-width: $xl) {
+			padding-left: 130px;
+		}
+	}
+
+	&__subtext {
+		color: $white;
+		font-family: $ff-medula;
+		font-size: 50px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: normal;
+		text-align: center;
+
+		@media all and (min-width: $md) {
+			font-size: 70px;
+		}
+
+		@media all and (min-width: $xl) {
+			text-align: left;
+			font-size: 96px;
+		}
+	}
+
+	&__subtitle {
+		color: $white;
+		font-family: $ff;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: $fw-bold;
+		line-height: normal;
+		margin-top: 5px;
+		text-align: center;
+
+		@media all and (min-width: $xl) {
+			text-align: left;
+		}
+	}
+
+	&__text {
+		color: $white;
+		font-family: $ff;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: $fw-bold;
+		line-height: normal;
+
+		@media all and (min-width: $md) {
+			font-size: 30px;
+		}
+
+		@media all and (min-width: $xl) {
+			font-size: 39px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 850px;
+		margin: 50px auto 0 auto;
+		text-align: center;
+
+		@media all and (min-width: $xl) {
+			padding-left: 120px;
+			text-align: left;
+		}
+	}
+
+	&__bottom {
+		padding: 20px;
+		background-color: $white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+
+		@media all and (min-width: $xl) {
+			padding: 19px 0 0 34px;
+			flex-direction: row;
+		}
+
+		&_text {
+			width: 100%;
+			color: $black;
+			font-family: $ff;
+			font-size: 15px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: 25px;
+			text-align: center;
+			margin-top: 20px;
+
+			@media all and (min-width: $xl) {
+				font-size: 19px;
+				line-height: 32px;
+				text-align: left;
+				max-width: 415px;
+				margin-top: 0;
+			}
+		}
+	}
+
+	&__rate {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20px;
+
+		@media all and (min-width: $xl) {
+			padding-top: 22px;
+			margin-right: 50px;
+			margin-bottom: 0;
+		}
+
+		&_stars {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+
+			@media all and (min-width: $xl) {
+				justify-content: flex-start;
+				max-width: 200px;
+			}
+
+			picture {
+				margin-right: 10px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+
+		&_text {
+			color: $black;
+			font-family: $ff-lato;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: normal;
+			text-align: center;
+			margin-top: 18px;
+		}
+	}
+
+	&__nums {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+
+		@media all and (min-width: $xl) {
+			max-width: 450px;
+		}
+
+		@media all and (min-width: $xxl) {
+			justify-content: space-between;
+		}
+
+		&_item {
+			margin-right: 25px;
+
+			&:first-child {
+				width: 100px;
+
+				@media all and (min-width: $md) {
+					width: 112px;
+				}
+
+				@media all and (min-width: $xl) {
+					width: 151px;
+				}
+			}
+
+			&:last-child {
+				width: 122px;
+				margin-right: 0;
+
+				@media all and (min-width: $md) {
+					width: 144px;
+				}
+
+				@media all and (min-width: $xl) {
+					width: 222px;
+				}
+			}
+
+			@media all and (min-width: $xl) {
+				margin-right: 45px;
+			}
+		}
+
+		&_title {
+			display: flex;
+			color: $black;
+			font-family: $ff;
+			font-size: 30px;
+			font-style: normal;
+			font-weight: $fw-bold;
+			line-height: normal;
+
+			@media all and (min-width: $md) {
+				font-size: 40px;
+			}
+
+			@media all and (min-width: $xl) {
+				font-size: 54px;
+			}
+
+			.plus {
+				font-size: 20px;
+
+				@media all and (min-width: $xl) {
+					font-size: 38px;
+				}
+			}
+		}
+
+		&_text {
+			color: $black;
+			font-family: $ff-lato;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: normal;
+			padding-left: 5px;
+		}
+	}
+
+	&__buttons {
+		margin-top: 57px;
+		margin-bottom: 34px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		@media all and (min-width: 576px) {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		@media all and (min-width: $xl) {
+			padding-left: 90px;
+		}
+
+		.find {
+			margin-bottom: 20px;
+
+			@media all and (min-width: 576px) {
+				margin-bottom: 0;
+				margin-right: 20px;
+			}
+
+			@media all and (min-width: $xl) {
+				margin-right: 58px;
+				margin-bottom: 0;
+			}
+		}
+
+		.sign-up {
+			padding: 25px 104px;
+		}
+	}
+
+	.girl__left, .girl__right {
+		position: absolute;
+	}
+
+	.girl__left {
+		display: none;
+		width: 290px;
+		height: 594px;
+		left: 0;
+		top: -500px;
+		object-fit: contain;
+
+		@media all and (min-width: $xl) {
+			display: block;
+		}
+
+		@media all and (min-width: 1700px) {
+			left: -225px;
+			top: -564px;
+			width: 494px;
+			height: 794px;
+		}
+	}
+
+	.girl__right {
+		display: none;
+		width: 274px;
+		height: 594px;
+		right: -120px;
+		top: -585px;
+		object-fit: contain;
+
+		@media all and (min-width: $xl) {
+			display: block;
+		}
+
+		@media all and (min-width: 1700px) {
+			right: -330px;
+			top: -611px;
+			width: 374px;
+			height: 794px;
+		}
+	}
+}

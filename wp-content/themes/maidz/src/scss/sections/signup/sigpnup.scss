@@ -1,0 +1,355 @@
+.signup {
+	width: 100vw;
+	height: 100vh;
+	background-color: $accent;
+	overflow-y: auto;
+
+	.container-fluid {
+		padding: 0;
+	}
+
+	&__logo {
+		color: $white;
+		font-family: $ff-medula;
+		font-size: 64px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: 25.6px;
+		margin-bottom: 82px;
+	}
+
+	&__title {
+		width: 100%;
+		color: $white;
+		text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		font-family: $ff;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: $fw-extra;
+		line-height: normal;
+		margin-bottom: 100px;
+
+		@media all and (min-width: $xl) {
+			max-width: 458px;
+			font-size: 40px;
+			padding-left: 30px;
+		}
+	}
+
+	&__img {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@media all and (min-width: $xl) {
+			flex-direction: row;
+		}
+	}
+
+	&__left {
+		width: 100%;
+		padding: 20px;
+
+		@media all and (min-width: $xl) {
+			padding: 70px 0 0 60px;
+			max-width: 550px;
+			height: 100vh;
+		}
+	}
+
+	&__right {
+		width: 100%;
+		padding: 30px;
+		background-color: $white;
+
+		@media all and (min-width: $xl) {
+			width: calc(100% - 550px);
+			padding: 44px 30px 20px 0;
+			border-top-left-radius: 30px;
+			border-bottom-left-radius: 30px;
+		}
+
+		@media all and (min-width: $xxl) {
+			padding: 84px 125px 20px 0;
+		}
+
+		&_wrapper {
+			@media all and (min-width: $xl) {
+				padding-left: 40px;
+			}
+
+			@media all and (min-width: $xxl) {
+				padding-left: 120px;
+			}
+		}
+
+		.h2 {
+			text-align: center;
+			margin: 30px 0;
+
+			@media all and (min-width: $xl) {
+				text-align: left;
+				margin: 34px 0 70px;
+			}
+		}
+
+		&_lang {
+			display: flex;
+			justify-content: space-between;
+
+			@media all and (min-width: $lg) {
+				padding-left: 95px;
+			}
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+
+		@media all and (min-width: $sm) {
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		@media all and (min-width: $xl) {
+			justify-content: flex-start;
+		}
+
+		.signup__button {
+			width: 100%;
+
+			&:first-child {
+				margin-bottom: 20px;
+
+				@media all and (min-width: $sm) {
+					margin-right: 10px;
+					margin-bottom: 0;
+				}
+
+				@media all and (min-width: $xl) {
+					margin-right: 50px;
+				}
+			}
+
+			@media all and (min-width: $sm) {
+				width: auto;
+			}
+		}
+	}
+
+	&__or {
+		color: #4E4747;
+		text-align: center;
+		font-family: $ff;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: $fw-medium;
+		line-height: normal;
+		margin: 20px 0;
+
+		@media all and (min-width: $xl) {
+			margin: 81px 0 95px;
+			max-width: 585px;
+		}
+	}
+
+	&__arrow {
+		width: 28px;
+		height: 28px;
+		cursor: pointer;
+		transition: opacity ease $tr;
+
+		&:hover {
+			opacity: $op;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	&__lang {
+		background-color: transparent;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		color: #000;
+		font-family: $ff;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: normal;
+		cursor: pointer;
+
+		.hidden__menu {
+			display: none;
+			position: absolute;
+			top: 30px;
+			left: 4px;
+
+			&.clicked {
+				display: block;
+			}
+
+			&_item {
+				transition: opacity ease $tr;
+				background-color: $white;
+
+				&:hover {
+					opacity: $op;
+				}
+			}
+		}
+
+		&_arr {
+			width: 18px;
+			height: 9px;
+			position: absolute;
+			right: -20px;
+			top: 6px;
+		}
+	}
+
+	&__form_wrapper {
+		max-width: 613px;
+		margin: 0 auto;
+
+		@media all and (min-width: $xl) {
+			margin: 0;
+		}
+	}
+
+	fieldset {
+		label {
+			color: #807676;
+			font-family: $ff;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: $fw-medium;
+			line-height: normal;
+			
+			@media all and (min-width: $lg) {
+				font-size: 18px;
+			}
+		}
+
+		input {
+			background-color: transparent;
+			box-shadow: none;
+			border-bottom: 1px solid #8B8888;
+			border-radius: 0;
+			padding-left: 0;
+			color: #807676;
+			font-family: $ff;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: $fw-medium;
+			line-height: normal;
+			margin-bottom: 28px;
+			padding: 8px 0;
+
+			@media all and (min-width: $lg) {
+				font-size: 18px;
+			}
+
+			&::placeholder {
+				color: #807676;
+				font-family: $ff;
+				font-size: 16px;
+				font-style: normal;
+				font-weight: $fw-medium;
+				line-height: normal;
+
+				@media all and (min-width: $lg) {
+					font-size: 18px;
+				}
+			}
+		}
+
+		.last {
+			margin-bottom: 0;
+		}
+
+		.input__wrapper {
+			position: relative;
+
+			.eye__wrapper {
+				width: 38px;
+				height: 38px;
+				cursor: pointer;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				transition: opacity ease $tr;
+
+				&:hover {
+					opacity: $op;
+				}
+
+				&.clicked {
+					&::before {
+						content: "";
+						width: 4px;
+						height: 100%;
+						background-color: #c9c9c9;
+						transform: rotate(135deg);
+						position: absolute;
+						left: 45%;
+						top: 0%;
+					}
+				}
+			}
+		}
+	}
+
+	.create__button {
+		width: 100%;
+		margin-top: 34px;
+	}
+
+	&__links {
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+	&__link {
+		color: #807676;
+		font-family: $ff;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: $fw-medium;
+		line-height: normal;
+
+		&:first-child {
+			margin-right: 10px;
+
+			@media all and (min-width: $lg) {
+				margin-right: 40px;
+			}
+		}
+
+		@media all and (min-width: $lg) {
+			font-size: 20px;
+		}
+	}
+}
+
+.signup-header {
+	display: none;
+}
+
+.signup-footer {
+	display: none;
+}

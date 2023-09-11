@@ -34,6 +34,15 @@ $site_description = get_bloginfo( 'description', 'display' );
 	</title>
 
 	<!-- FAVICON -->
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo THEME_URI ?>/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo THEME_URI ?>/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo THEME_URI ?>/favicon/favicon-16x16.png">
+	<link rel="manifest" href="<?php echo THEME_URI ?>/favicon/site.webmanifest">
+	<link rel="mask-icon" href="<?php echo THEME_URI ?>/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="<?php echo THEME_URI ?>/favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="<?php echo THEME_URI ?>/favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
 	<!-- /FAVICON -->
 
 	<?php wp_head() ?>
@@ -44,12 +53,33 @@ $site_description = get_bloginfo( 'description', 'display' );
 
 	<div class="wrapper">
 		<header class="header">
-			<?php
-			wp_nav_menu( [
-				'theme_location'	=> 'header_menu',
-				'container'			=> 'nav',
-				'container_class'	=> 'header-nav'
-			] );
-			?>
+			<div class="container">
+				<div class="header__wrapper" id="menu-lock">
+					<a href="<?php echo home_url( '/' ) ?>" class="header__logo">
+						Logo
+					</a>
+					<div class="header__inner">
+						<?php
+						wp_nav_menu( [
+							'theme_location'	=> 'header_menu',
+							'container'			=> 'nav',
+							'container_class'	=> 'header__nav'
+						] );
+						?>
+
+						<div class="header__buttons">
+							<button class="button transparent sign-in" type="button">
+								Sign In
+							</button>
+							<button class="button sign-up" type="button">
+								Sign Up
+							</button>
+						</div>
+					</div>
+					<div class="burger__button">
+						<span></span>
+					</div>
+				</div>
+			</div>
 		</header>
 

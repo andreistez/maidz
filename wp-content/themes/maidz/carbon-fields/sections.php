@@ -3,79 +3,75 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
-Container::make( 'post_meta', __( 'Fields', THEME_NAME ) )
+Container::make( 'post_meta', __( 'Fields', 'maidz' ) )
 	->where( 'post_type', '=', 'page' )
 	->where( 'post_template', '=', 'page-templates/flexible-sections.php' )
 	->add_fields( [
-		Field::make( 'complex', 'page_sections', __( 'Page Sections', THEME_NAME ) )
+		Field::make( 'complex', 'page_sections', __( 'Page Sections', 'maidz' ) )
 			->set_layout( 'tabbed-horizontal' )
 
 			// Hero section.
-			->add_fields( 'hero_section', __( 'Hero Section', THEME_NAME ), [
+			->add_fields( 'hero_section', __( 'Hero Section', 'maidz' ), [
 				// Main fields.
-				Field::make( 'rich_text', 'title', __( 'Title', THEME_NAME ) )
-					->set_width( 40 ),
-				Field::make( 'text', 'text', __( 'Text', THEME_NAME ) )
-					->set_width( 30 ),
-				Field::make( 'checkbox', 'is_first', __( 'First on the Page', THEME_NAME ) )
-					->set_width( 30 ),
-				Field::make( 'image', 'circle', __( 'Circle Image', THEME_NAME ) )
+				Field::make( 'text', 'sup_title', __( 'Sup Title', 'maidz' ) )
+					->set_width( 25 ),
+				Field::make( 'text', 'title', __( 'Title', 'maidz' ) )
 				     ->set_width( 25 ),
-				Field::make( 'image', 'screen', __( 'Screen Image', THEME_NAME ) )
-				     ->set_width( 25 ),
-				Field::make( 'image', 'note_top', __( 'Top Notification Image', THEME_NAME ) )
-				     ->set_width( 25 ),
-				Field::make( 'image', 'note_bottom', __( 'Bottom Notification Image', THEME_NAME ) )
-				     ->set_width( 25 ),
-				Field::make( 'image', 'app_store', __( 'AppStore Image', THEME_NAME ) )
-				     ->set_width( 50 ),
-				Field::make( 'image', 'google_play', __( 'GooglePlay Image', THEME_NAME ) )
-				     ->set_width( 50 )
+				Field::make( 'text', 'sub_title', __( 'Sub Title', 'maidz' ) )
+					->set_width( 25 ),
+				Field::make( 'text', 'text', __( 'Text', 'maidz' ) )
+					->set_width( 25 ),
+				Field::make( 'textarea', 'bottom_text', __( 'Bottom Text', 'maidz' ) )
+					->set_width( 25 ),
+				Field::make( 'text', 'happy_starz_count', __( 'Happy Starz Count', 'maidz' ) )
+					->set_width( 25 ),
+				Field::make( 'text', 'happy_hosts_count', __( 'Happy Hosts Count', 'maidz' ) )
+					->set_width( 25 )
 			] )
 
-			// Bullet Points section.
-			->add_fields( 'bullets_section', __( 'Bullet Points Section', THEME_NAME ), [
-				Field::make( 'complex', 'bullets', __( 'Bullet Points', THEME_NAME ) )
+			// Testimonials section.
+			->add_fields( 'testimonials_section', __( 'Testimonials Section', 'maidz' ), [
+				Field::make( 'text', 'title', __( 'Title', 'maidz' ) )
+					 ->set_width( 50 ),
+				Field::make( 'textarea', 'desc', __( 'Description', 'maidz' ) )
+					 ->set_width( 50 ),
+				Field::make( 'complex', 'testimonials', __( 'Testimonials', 'maidz' ) )
 					->set_layout( 'tabbed-horizontal' )
 					->add_fields( [
-						Field::make( 'image', 'icon', __( 'Icon', THEME_NAME ) )
-							->set_width( 50 ),
-						Field::make( 'rich_text', 'text', __( 'Text', THEME_NAME ) )
-							->set_width( 50 )
+						Field::make( 'radio', 'type', __( 'Type', 'maidz' ) )
+							->set_options( ['image' => __( 'Image', 'maidz' ), 'video' => __( 'Video', 'maidz' )] )
+							->set_width( 20 ),
+						Field::make( 'image', 'image', __( 'Image', 'maidz' ) )
+							->set_width( 20 )
+							->set_conditional_logic( [ ['field' => 'type', 'value' => 'image'] ] ),
+						Field::make( 'text', 'video', __( 'Video URL', 'maidz' ) )
+						     ->set_width( 20 )
+							->set_conditional_logic( [ ['field' => 'type', 'value' => 'video'] ] ),
+						Field::make( 'image', 'poster', __( 'Poster', 'maidz' ) )
+							 ->set_width( 20 )
+							 ->set_conditional_logic( [ ['field' => 'type', 'value' => 'video'] ] ),
+						Field::make( 'text', 'name', __( 'Name', 'maidz' ) )
+						     ->set_width( 20 ),
+						Field::make( 'text', 'position', __( 'Position', 'maidz' ) )
+						     ->set_width( 20 ),
+						Field::make( 'textarea', 'text', __( 'Text', 'maidz' ) )
+							->set_width( 20 )
+							->set_conditional_logic( [ ['field' => 'type', 'value' => 'image'] ] ),
 					] )
 			] )
 
-			// Image and Text section.
-			->add_fields( 'image_text_section', __( 'Image and Text Section', THEME_NAME ), [
-				Field::make( 'image', 'image', __( 'Image', THEME_NAME ) )
-					->set_width( 30 ),
-				Field::make( 'rich_text', 'text', __( 'Text', THEME_NAME ) )
-					->set_width( 40 ),
-				Field::make( 'image', 'bottom_image', __( 'Bottom Image', THEME_NAME ) )
-					->set_width( 30 )
-			] )
-
-			// Text and Image section.
-			->add_fields( 'text_image_section', __( 'Text and Image Section', THEME_NAME ), [
-				Field::make( 'rich_text', 'text', __( 'Text', THEME_NAME ) )
-					->set_width( 40 ),
-				Field::make( 'image', 'image', __( 'Image', THEME_NAME ) )
-					->set_width( 30 ),
-				Field::make( 'image', 'second_image', __( 'Second Image', THEME_NAME ) )
-					->set_width( 30 )
-			] )
-
-			// Partners section.
-			->add_fields( 'partners_section', __( 'Partners Section', THEME_NAME ), [
-				Field::make( 'text', 'title', __( 'Title', THEME_NAME ) ),
-				Field::make( 'complex', 'partners', __( 'Partners', THEME_NAME ) )
-					->set_layout( 'tabbed-horizontal' )
-					->add_fields( [
-						Field::make( 'image', 'logo', __( 'Logo', THEME_NAME ) )
-							->set_width( 50 ),
-						Field::make( 'text', 'name', __( 'Name', THEME_NAME ) )
-							->set_width( 50 )
-					] )
+			// About section.
+			->add_fields( 'about_section', __( 'About Section', 'maidz' ), [
+				Field::make( 'complex', 'items', __( 'Items', 'maidz' ) )
+					 ->set_layout( 'tabbed-horizontal' )
+					 ->add_fields( [
+						 Field::make( 'image', 'image', __( 'Image', 'maidz' ) )
+							  ->set_width( 34 ),
+						 Field::make( 'text', 'title', __( 'Title', 'maidz' ) )
+							  ->set_width( 33 ),
+						 Field::make( 'textarea', 'text', __( 'Text', 'maidz' ) )
+							  ->set_width( 33 )
+					 ] )
 			] )
 	] );
 

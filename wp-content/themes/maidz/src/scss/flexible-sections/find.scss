@@ -1,0 +1,103 @@
+@import '../components/vars';
+
+.find {
+	padding: 40px 0;
+	background-color: $accent;
+
+	@media all and (min-width: $md) {
+		padding: 84px 0 87px;
+	}
+
+	.container {
+		max-width: 1000px;
+	}
+
+	.h2 {
+		color: $white;
+		margin-bottom: 30px;
+	}
+
+	&__subtext {
+		color: $white;
+		text-align: center;
+		font-family: $ff;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: $fw-bold;
+		line-height: 23.4px;
+		margin-bottom: 30px;
+
+		@media all and (min-width: $md) {
+			font-size: 17px;
+		}
+	}
+
+	&__nums {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		@media all and (min-width: $md) {
+			flex-direction: row;
+		}
+
+		&_item {
+			margin-right: 100px;
+	
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__item_title {
+		display: flex;
+		color: $white;
+		font-family: $ff;
+		font-size: 45px;
+		font-style: normal;
+		font-weight: $fw-bold;
+		line-height: normal;
+		margin-bottom: 5px;
+
+		span {
+			font-size: 33px;
+		}
+	}
+
+	&__item_text {
+		color: $white;
+		font-family: $ff-lato;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: $fw-regular;
+		line-height: normal;
+	}
+
+	&__form_wrapper {
+		margin-top: 32px;
+	}
+
+	fieldset {
+		display: flex;
+		flex-direction: column;
+
+		@media all and (min-width: $md) {
+			flex-direction: row;
+		}
+	}
+
+	.button {
+		font-weight: $fw-bold;
+		margin-top: 20px;
+		background-color: $white;
+		color: $black;
+		font-size: 16px;
+
+		@media all and (min-width: $md) {
+			margin-left: 24px;
+			max-width: 221px;
+			margin-top: 0;
+		}
+	}
+}

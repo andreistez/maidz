@@ -20,9 +20,15 @@ export default {
 	},
 
 	scssPages	: {
-		src		: pathSrc + '/scss/pages/**/*.scss',
+		src		: pathSrc + '/scss/pages/*.scss',
 		watch	: pathSrc + '/scss/pages/**/*.scss',
 		dest	: pathDest + '/css/pages'
+	},
+
+	scssSections: {
+		src		: pathSrc + '/scss/flexible-sections/*.scss',
+		watch	: pathSrc + '/scss/flexible-sections/**/*.scss',
+		dest	: pathDest + '/css/flexible-sections'
 	},
 
 	js		: {

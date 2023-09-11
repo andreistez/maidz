@@ -3,9 +3,8 @@
 @import 'components/vars';
 @import 'components/typography';
 @import 'components/grid';
-
-// Theme base styles.
 @import 'components/base';
+@import 'components/buttons';
 
 // Header styles.
 @import 'header/header';
@@ -15,5 +14,5 @@
 @import 'footer/footer';
 @import 'footer/menu';
 
-// Other styles. Please headline each group of your custom styles, for example:
-// ACF Flexible content styles.
+// Signup page sections styles.
+@import 'sections/signup/sigpnup';
