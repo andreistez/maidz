@@ -6,6 +6,9 @@
  * @package WordPress
  * @subpackage maidz
  */
+
+$socials	= carbon_get_theme_option( 'socials' );
+$copyright	= '&copy; ' . date( 'Y' ) . ' ' . carbon_get_theme_option( 'copyright' );
 ?>
 
 			<footer class="footer">
@@ -28,6 +31,7 @@
 									Branding
 								</div>
 							</div>
+
 							<div class="footer__row">
 								<div class="footer__col">
 									<a class="footer__link" href="#">
@@ -56,6 +60,7 @@
 								</div>
 								<div class="footer__col"></div>
 							</div>
+
 							<div class="footer__row">
 								<div class="footer__col">
 									<a class="footer__link" href="#">
@@ -84,6 +89,7 @@
 								</div>
 								<div class="footer__col"></div>
 							</div>
+
 							<div class="footer__row">
 								<div class="footer__col">
 									<a class="footer__link" href="#">
@@ -112,6 +118,7 @@
 								</div>
 								<div class="footer__col"></div>
 							</div>
+
 							<div class="footer__row">
 								<div class="footer__col">
 									<a class="footer__link" href="#">
@@ -140,6 +147,7 @@
 								</div>
 								<div class="footer__col"></div>
 							</div>
+
 							<div class="footer__row">
 								<div class="footer__col">
 									<a class="footer__link" href="#">
@@ -168,6 +176,7 @@
 								</div>
 								<div class="footer__col"></div>
 							</div>
+
 							<div class="footer__row">
 								<div class="footer__col">
 									<a class="footer__link" href="#">
@@ -189,24 +198,38 @@
 								<div class="footer__col"></div>
 							</div>
 						</div>
+
 						<div class="footer__contacts">
-							<div class="footer__contacts_title">
-								FOLLOW US!
-							</div>
-							<div class="footer__socials">
-								<a class="footer__social" href="#" target="_blank">
-									<img src="<?php echo THEME_URI ?>/static/img/home/footer/tik-tok.svg" width="66" height="61" loading="lazy" alt="">
-								</a>
-								<a class="footer__social" href="#" target="_blank">
-									<img src="<?php echo THEME_URI ?>/static/img/home/footer/youtoube.svg" width="66" height="61" loading="lazy" alt="">
-								</a>
-								<a class="footer__social" href="#" target="_blank">
-									<img src="<?php echo THEME_URI ?>/static/img/home/footer/twit.svg" width="66" height="61" loading="lazy" alt="">
-								</a>
-							</div>
-							<div class="footer__rights">
-								C 2023 ONLY MAIDZ ALL RIGHTS RESERVED
-							</div>
+							<?php
+							if( ! empty( $socials ) ){
+								?>
+								<div class="footer__contacts_title">
+									FOLLOW US!
+								</div>
+								<div class="footer__socials">
+									<?php
+									foreach( $socials as $soc ){
+										$icon	= $soc['icon'];
+										$url	= $soc['url'];
+										?>
+										<a class="footer__social" href="<?php echo esc_url( $url ) ?>" target="_blank">
+											<img src="<?php echo wp_get_attachment_image_url( $icon ) ?>" width="45" height="48" loading="lazy" alt="" />
+										</a>
+										<?php
+									}
+									?>
+								</div>
+								<?php
+							}
+
+							if( $copyright ){
+								?>
+								<div class="footer__rights">
+									<?php echo esc_html( $copyright ) ?>
+								</div>
+								<?php
+							}
+							?>
 						</div>
 					</div>
 				</div>

@@ -8,7 +8,8 @@
  */
 
 global $page, $paged;
-$site_description = get_bloginfo( 'description', 'display' );
+$site_description	= get_bloginfo( 'description', 'display' );
+$logo_text			= carbon_get_theme_option( 'header_logo_text' );
 ?>
 
 <!doctype html>
@@ -55,9 +56,16 @@ $site_description = get_bloginfo( 'description', 'display' );
 		<header class="header">
 			<div class="container">
 				<div class="header__wrapper" id="menu-lock">
-					<a href="<?php echo home_url( '/' ) ?>" class="header__logo">
-						Logo
-					</a>
+					<?php
+					if( $logo_text ){
+						?>
+						<a href="<?php echo home_url( '/' ) ?>" class="header__logo">
+							<?php echo esc_html( $logo_text ) ?>
+						</a>
+						<?php
+					}
+					?>
+
 					<div class="header__inner">
 						<?php
 						wp_nav_menu( [

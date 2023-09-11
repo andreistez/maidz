@@ -12,7 +12,6 @@ Container::make( 'post_meta', __( 'Fields', 'maidz' ) )
 
 			// Hero section.
 			->add_fields( 'hero_section', __( 'Hero Section', 'maidz' ), [
-				// Main fields.
 				Field::make( 'text', 'sup_title', __( 'Sup Title', 'maidz' ) )
 					->set_width( 25 ),
 				Field::make( 'text', 'title', __( 'Title', 'maidz' ) )
@@ -72,6 +71,38 @@ Container::make( 'post_meta', __( 'Fields', 'maidz' ) )
 						 Field::make( 'textarea', 'text', __( 'Text', 'maidz' ) )
 							  ->set_width( 33 )
 					 ] )
+			] )
+
+			// Hiring section.
+			->add_fields( 'hiring_section', __( 'Hiring Section', 'maidz' ), [
+				Field::make( 'text', 'title', __( 'Title', 'maidz' ) )
+					->set_width( 50 ),
+				Field::make( 'image', 'image', __( 'Image', 'maidz' ) )
+					->set_width( 50 ),
+				Field::make( 'complex', 'bullets_left', __( 'Bullets Left', 'maidz' ) )
+					 ->set_layout( 'tabbed-horizontal' )
+					 ->add_fields( [
+						 Field::make( 'text', 'item', __( 'Item', 'maidz' ) )
+					 ] )
+					->set_width( 50 ),
+				Field::make( 'complex', 'bullets_right', __( 'Bullets Right', 'maidz' ) )
+					 ->set_layout( 'tabbed-horizontal' )
+					 ->add_fields( [
+						 Field::make( 'text', 'item', __( 'Item', 'maidz' ) )
+					 ] )
+					->set_width( 50 )
+			] )
+
+			// Find Maid section.
+			->add_fields( 'find_section', __( 'Find Maid', 'maidz' ), [
+				Field::make( 'text', 'title', __( 'Title', 'maidz' ) )
+					 ->set_width( 25 ),
+				Field::make( 'textarea', 'desc', __( 'Description', 'maidz' ) )
+					 ->set_width( 25 ),
+				Field::make( 'text', 'maids_count', __( 'Maids Count', 'maidz' ) )
+					 ->set_width( 25 ),
+				Field::make( 'text', 'hosts_count', __( 'Hosts Count', 'maidz' ) )
+					 ->set_width( 25 )
 			] )
 	] );
 

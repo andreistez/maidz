@@ -18,30 +18,11 @@ Container::make( 'theme_options', __( 'Theme Settings', 'maidz' ) )
 
 	// Header settings.
 	->add_tab( __( 'Header', 'maidz' ), [
-		Field::make( 'image', 'header_logo', __( 'Header Logo', 'maidz' ) )
-			->set_width( 30 ),
-		Field::make( 'text', 'header_button_label', __( 'Button Label', 'maidz' ) )
-			->set_width( 35 ),
-		Field::make( 'text', 'header_button_link', __( 'Button Link', 'maidz' ) )
-			->set_width( 35 )
+		Field::make( 'text', 'header_logo_text', __( 'Header Logo Text', 'maidz' ) )
 	] )
 
 	// Footer settings.
 	->add_tab( __( 'Footer', 'maidz' ), [
 		Field::make( 'text', 'copyright', __( 'Copyright', 'maidz' ) )
-			->set_width( 20 ),
-		Field::make( 'image', 'app_store_image', __( 'AppStore Image', 'maidz' ) )
-			->set_width( 20 ),
-		Field::make( 'image', 'google_play_image', __( 'GooglePlay Image', 'maidz' ) )
-			->set_width( 20 )
-	] )
-
-	// 404 Page settings.
-	->add_tab( __( '404 Page', 'maidz' ), [
-		Field::make( 'image', '404_image', __( '404 Image', 'maidz' ) )
-			->set_width( 50 ),
-
-		Field::make( 'textarea', '404_description', __( '404 Description', 'maidz' ) )
-			->set_width( 50 )
 	] );
 
