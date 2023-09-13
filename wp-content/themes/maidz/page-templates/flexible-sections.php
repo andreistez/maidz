@@ -8,7 +8,7 @@
  * @see Page with Flexible Sections tempate -> Fields -> Page Sections.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 
 get_header();

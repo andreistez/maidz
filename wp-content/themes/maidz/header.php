@@ -53,41 +53,51 @@ $logo_text			= carbon_get_theme_option( 'header_logo_text' );
 	<?php wp_body_open() ?>
 
 	<div class="wrapper">
-		<header class="header">
-			<div class="container">
-				<div class="header__wrapper" id="menu-lock">
-					<?php
-					if( $logo_text ){
-						?>
-						<a href="<?php echo home_url( '/' ) ?>" class="header__logo">
-							<?php echo esc_html( $logo_text ) ?>
-						</a>
+		<?php
+		if(
+			! is_page_template( 'page-templates/host-signup.php' ) &&
+			! is_page_template( 'page-templates/maid-signup.php' ) &&
+			! is_page_template( 'page-templates/login.php' )
+		){
+			?>
+			<header class="header">
+				<div class="container">
+					<div class="header__wrapper" id="menu-lock">
 						<?php
-					}
-					?>
-
-					<div class="header__inner">
-						<?php
-						wp_nav_menu( [
-							'theme_location'	=> 'header_menu',
-							'container'			=> 'nav',
-							'container_class'	=> 'header__nav'
-						] );
+						if( $logo_text ){
+							?>
+							<a href="<?php echo home_url( '/' ) ?>" class="header__logo">
+								<?php echo esc_html( $logo_text ) ?>
+							</a>
+							<?php
+						}
 						?>
 
-						<div class="header__buttons">
-							<button class="button transparent sign-in" type="button">
-								Sign In
-							</button>
-							<button class="button sign-up" type="button">
-								Sign Up
-							</button>
+						<div class="header__inner">
+							<?php
+							wp_nav_menu( [
+								'theme_location'	=> 'header_menu',
+								'container'			=> 'nav',
+								'container_class'	=> 'header__nav'
+							] );
+							?>
+
+							<div class="header__buttons">
+								<a href="<?php echo get_the_permalink( 43 ) ?>" class="button transparent sign-in" type="button">
+									Sign In
+								</a>
+								<a href="<?php echo get_the_permalink( 45 ) ?>" class="button sign-up" type="button">
+									Sign Up
+								</a>
+							</div>
+						</div>
+						<div class="burger__button">
+							<span></span>
 						</div>
 					</div>
-					<div class="burger__button">
-						<span></span>
-					</div>
 				</div>
-			</div>
-		</header>
+			</header>
+			<?php
+		}
+		?>
 

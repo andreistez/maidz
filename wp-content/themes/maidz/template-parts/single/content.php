@@ -4,7 +4,7 @@
  * Single post content.
  *
  * @package WordPress
- * @subpackage critick
+ * @subpackage maidz
  */
 
 // If this is NOT single post page - do nothing.
