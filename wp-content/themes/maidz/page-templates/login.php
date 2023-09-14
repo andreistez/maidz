@@ -60,7 +60,7 @@ $http_referer = $_SERVER['HTTP_REFERER'] ?? '';
 								<div class="signin__account">
 									<div class="signin__account_top">
 										<?php _e( 'Dont have an acount?', 'maidz' ) ?>
-										<a href="#" class="sugnup__account_link">
+										<a href="<?php echo get_the_permalink( 41 ) ?>" class="sugnup__account_link">
 											<?php _e( 'Sign up', 'maidz' ) ?>
 										</a>
 									</div>
