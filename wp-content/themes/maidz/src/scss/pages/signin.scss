@@ -1,0 +1,139 @@
+@import '../components/vars';
+
+.signin {
+	.signup__img {
+		margin-top: 140px;
+	}
+
+	.signup__welcome_title {
+		margin-top: 40px;
+	}
+
+	&__form_wrapper {
+		background-color: $white;
+		width: 100%;
+		max-width: 398px;
+		padding: 40px 10px 40px 10px;
+		border-radius: 20px;
+		margin-bottom: 30px;
+
+		.button__wrapper {
+			margin-bottom: 30px;
+		}
+
+		.create__button {
+			width: 100%;
+			max-width: 306px;
+			padding: 6px 30px;
+		}
+
+		@media all and (min-width: $xl) {
+			margin-left: 30px;
+			padding: 100px 20px 100px 20px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__text {
+		color: $grey;
+		text-align: center;
+		font-family: $ff;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin-bottom: 50px;
+	}
+
+	&__account {
+		&_top,
+		&_bottom {
+			color: $black;
+			font-family: $ff;
+			font-size: 16px;
+			font-style: normal;
+			font-weight: $fw-regular;
+			line-height: normal;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		&_bottom {
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 100%;
+				height: 2px;
+				background-color: $black;
+				display: block;
+			}
+		}
+
+		a {
+			color: $accent;
+			font-weight: $fw-bold;
+		}
+
+		&_text {
+			position: relative;
+			background-color: $white;
+			padding: 0 5px;
+		}
+	}
+
+	&__integrations {
+		display: flex;
+		justify-content: center;
+	}
+
+	.integration {
+		margin-right: 20px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.signup__left {
+		padding: 20px;
+
+		@media all and (min-width: $xl) {
+			padding: 70px 60px 70px 60px;
+		}
+	}
+
+	.forgot {
+		position: relative;
+
+		&__pass {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			color: $accent;
+			text-align: right;
+			font-family: $ff;
+			font-size: 10px;
+			font-style: normal;
+			font-weight: $fw-bold;
+			line-height: normal;
+
+			@media all and (min-width: $md) {
+				font-size: 16px;
+			}
+		}
+
+		input {
+			padding-right: 104px;
+			margin-bottom: 0;
+
+			@media (min-width: $md) {
+				padding-right: 160px
+			}
+		}
+	}
+}

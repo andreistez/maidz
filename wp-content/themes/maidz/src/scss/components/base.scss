@@ -33,6 +33,16 @@ form,fieldset {
 	border: 0;
 }
 
+.note {
+	text-align: center;
+	font-size: $fs-xl;
+	font-weight: $fw-bold;
+
+	&:not(:empty) {
+		margin-top: 30px
+	}
+}
+
 input {
 	width: 100%;
 	color: #757575;

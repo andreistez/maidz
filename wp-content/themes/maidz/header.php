@@ -8,8 +8,8 @@
  */
 
 global $page, $paged;
-$site_description	= get_bloginfo( 'description', 'display' );
-$logo_text			= carbon_get_theme_option( 'header_logo_text' );
+$site_desc	= get_bloginfo( 'description', 'display' );
+$logo		= carbon_get_theme_option( 'header_logo' );
 ?>
 
 <!doctype html>
@@ -28,7 +28,7 @@ $logo_text			= carbon_get_theme_option( 'header_logo_text' );
 		wp_title( '|', true, 'right' );
 		bloginfo( 'name' );
 
-		if( $site_description && ( is_home() || is_front_page() ) ) echo " | $site_description";
+		if( $site_desc && ( is_home() || is_front_page() ) ) echo " | $site_desc";
 
 		if( $paged > 1 || $page > 1 ) echo ' | ' . sprintf( __( 'Page %s', 'critick' ), max( $paged, $page ) );
 		?>
@@ -64,13 +64,10 @@ $logo_text			= carbon_get_theme_option( 'header_logo_text' );
 				<div class="container">
 					<div class="header__wrapper" id="menu-lock">
 						<?php
-						if( $logo_text ){
-							?>
-							<a href="<?php echo home_url( '/' ) ?>" class="header__logo">
-								<?php echo esc_html( $logo_text ) ?>
-							</a>
-							<?php
-						}
+						if( $logo )
+							echo '<a href="' . home_url( '/' ) . '" class="header__logo">'
+								. wp_get_attachment_image( $logo, 'medium' ) .
+							'</a>';
 						?>
 
 						<div class="header__inner">

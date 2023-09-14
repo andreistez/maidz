@@ -7,7 +7,6 @@
 if( ! $section = $args['section'] ?? null ) return;
 
 wp_enqueue_style( 'testimonials', THEME_URI . '/static/css/flexible-sections/testimonials.min.css', [], THEME_VERSION );
-//wp_enqueue_script( 'testimonials', THEME_URI . '/static/js/flexible-sections/testimonials.min.js', [], THEME_VERSION, true );
 
 $title			= $section['title'];
 $desc			= $section['desc'];

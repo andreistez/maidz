@@ -2,7 +2,7 @@
 
 .hero {
 	padding: 140px 0 0;
-	background-color: $accent;
+	background-color: $rose;
 
 	@media all and (min-width: $xl) {
 		padding: 190px 0 0;
@@ -83,6 +83,8 @@
 		max-width: 850px;
 		margin: 50px auto 0 auto;
 		text-align: center;
+		position: relative;
+		z-index: 1;
 
 		@media all and (min-width: $xl) {
 			padding-left: 120px;
@@ -291,40 +293,42 @@
 	.girl__left {
 		display: none;
 		width: 290px;
-		height: 594px;
+		height: auto;
 		left: 0;
-		top: -500px;
+		bottom: 0;
 		object-fit: contain;
 
 		@media all and (min-width: $xl) {
 			display: block;
+			bottom: 179px;
 		}
 
 		@media all and (min-width: 1700px) {
 			left: -225px;
-			top: -564px;
 			width: 494px;
-			height: 794px;
+			height: 693px;
+			bottom: 0;
 		}
 	}
 
 	.girl__right {
 		display: none;
-		width: 274px;
-		height: 594px;
+		width: 234px;
+		height: auto;
 		right: -120px;
-		top: -585px;
-		object-fit: contain;
+		bottom: 0;
 
 		@media all and (min-width: $xl) {
 			display: block;
+			bottom: 179px;
+			right: -50px;
 		}
 
 		@media all and (min-width: 1700px) {
 			right: -330px;
-			top: -611px;
 			width: 374px;
-			height: 794px;
+			height: auto;
+			bottom: 0;
 		}
 	}
 }

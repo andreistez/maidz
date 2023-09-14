@@ -13,6 +13,7 @@
 add_action( 'carbon_fields_register_fields', function(){
 	require_once( 'carbon-fields/theme-settings.php' );
 	require_once( 'carbon-fields/sections.php' );
+	require_once( 'carbon-fields/users.php' );
 } );
 
 const THEME_NAME = 'maidz';
@@ -28,12 +29,15 @@ function critick_load_theme_dependencies(): void
 {
 	// Register theme menus.
 	register_nav_menus( [
-		'header_menu'	=> esc_html__( 'Header Menu', 'maidz' ),
-		'footer_menu'	=> esc_html__( 'Footer Menu', 'maidz' )
+		'header_menu'		=> esc_html__( 'Header Menu', 'maidz' ),
+		'footer_hosts_menu'	=> esc_html__( 'Footer For Hosts', 'maidz' ),
+		'footer_services'	=> esc_html__( 'Footer Services', 'maidz' ),
+		'footer_resources'	=> esc_html__( 'Footer Resources', 'maidz' )
 	] );
 
 	// Please place all custom functions declarations in this file.
 	require_once( 'theme-functions/theme-functions.php' );
+	require_once( 'theme-functions/auth.php' );
 }
 
 add_action( 'init', 'critick_init_theme' );

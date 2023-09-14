@@ -18,7 +18,7 @@ Container::make( 'theme_options', __( 'Theme Settings', 'maidz' ) )
 
 	// Header settings.
 	->add_tab( __( 'Header', 'maidz' ), [
-		Field::make( 'text', 'header_logo_text', __( 'Header Logo Text', 'maidz' ) )
+		Field::make( 'image', 'header_logo', __( 'Header Logo', 'maidz' ) )
 	] )
 
 	// Footer settings.
