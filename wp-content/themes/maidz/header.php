@@ -80,12 +80,28 @@ $logo		= carbon_get_theme_option( 'header_logo' );
 							?>
 
 							<div class="header__buttons">
-								<a href="<?php echo get_the_permalink( 43 ) ?>" class="button transparent sign-in" type="button">
-									<?php _e( 'Sign In', 'maidz' ) ?>
-								</a>
-								<a href="<?php echo get_the_permalink( 45 ) ?>" class="button sign-up" type="button">
-									<?php _e( 'Sign Up', 'maidz' ) ?>
-								</a>
+								<?php
+								if( is_user_logged_in() ){
+									$user = wp_get_current_user();
+									?>
+									<div class="header__user">
+										<span><?php echo $user->display_name ?></span>
+										<button class="button transparent logout" type="button">
+											<?php _e( 'Log out', 'maidz' ) ?>
+										</button>
+									</div>
+									<?php
+								}else{
+									?>
+									<a href="<?php echo get_the_permalink( 43 ) ?>" class="button transparent sign-in" type="button">
+										<?php _e( 'Sign In', 'maidz' ) ?>
+									</a>
+									<a href="<?php echo get_the_permalink( 45 ) ?>" class="button sign-up" type="button">
+										<?php _e( 'Sign Up', 'maidz' ) ?>
+									</a>
+									<?php
+								}
+								?>
 							</div>
 						</div>
 						<div class="burger__button">

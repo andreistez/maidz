@@ -41,7 +41,7 @@ $http_referer = $_SERVER['HTTP_REFERER'] ?? '';
 								if( ! is_user_logged_in() ){
 									_e( 'Create Host Account', 'maidz' );
 								}else{
-									$user = wp_set_current_user( get_current_user_id() );
+									$user = wp_get_current_user();
 									printf( __( 'Hello, %s!%sYou are already logged in.', 'maidz' ), $user->display_name, '<br />' );
 								}
 								?>

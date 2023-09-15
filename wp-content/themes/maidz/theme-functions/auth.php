@@ -106,14 +106,11 @@ add_action( 'wp_ajax_maidz_ajax_logout', 'maidz_ajax_logout' );
  */
 function maidz_ajax_logout(): void
 {
-	$page_id	= isset( $_POST['page'] ) ? ( int ) maidz_clean( $_POST['page'] ) : null;
-	$redirect	= get_page_template() === 'page-templates/authorization.php' ? home_url( '/' ) : get_permalink( $page_id );
-
 	wp_logout();
 
 	wp_send_json_success( [
-		'msg'		=> esc_html__( 'Success', 'maidz' ),
-		'redirect'	=> $redirect
+		'msg'		=> esc_html__( 'Bye!', 'maidz' ),
+		'redirect'	=> home_url( '/' )
 	] );
 }
 
@@ -159,6 +156,9 @@ function maidz_ajax_register(): void
 	// Set new User's password and meta fields.
 	wp_set_password( $pass, $new_user_id );
 	carbon_set_user_meta( $new_user_id, 'type', $type );
-	wp_send_json_success( ['msg' => sprintf( __( 'Congratulations! New User %s registered successfully.', 'maidz' ), $login, $email )] );
+	wp_send_json_success( [
+		'msg'		=> sprintf( __( 'Congratulations! New User %s registered successfully.', 'maidz' ), $login, $email ),
+		'redirect'	=> get_the_permalink( 43 )
+	] );
 }
 
