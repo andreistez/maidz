@@ -16,17 +16,6 @@ add_action( 'init', 'maidz_block_admin_access' );
  */
 function maidz_block_admin_access(): void
 {
-	global $pagenow;
-
-	if(
-		'wp-login.php' === $pagenow
-		&& ! current_user_can( 'administrator' )
-		&& ! current_user_can( 'editor' )
-	){
-		wp_redirect( get_the_permalink( 43 ) );
-		exit;
-	}
-
 	if(
 		is_admin()
 		&& ! current_user_can( 'administrator' )

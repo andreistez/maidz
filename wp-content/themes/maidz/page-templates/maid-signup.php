@@ -52,10 +52,7 @@ $http_referer = $_SERVER['HTTP_REFERER'] ?? '';
 						if( ! is_user_logged_in() ){
 							?>
 							<div class="signup__buttons">
-								<button class="signup__button">
-									<img src="<?php echo THEME_URI ?>/static/img/ico/google.svg" width="30" height="30" alt="">
-									Sign up with google
-								</button>
+								<?php echo do_shortcode( '[nextend_social_login provider="google"]' ) ?>
 								<button class="signup__button">
 									<img src="<?php echo THEME_URI ?>/static/img/ico/fb.svg" width="30" height="30" alt="">
 									Sign up with facebook
