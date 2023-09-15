@@ -39,7 +39,7 @@ $http_referer = $_SERVER['HTTP_REFERER'] ?? '';
 							<h2 class="h2">
 								<?php
 								if( ! is_user_logged_in() ){
-									_e( 'Create Host Account', 'maidz' );
+									_e( 'Create Talent Account', 'maidz' );
 								}else{
 									$user = wp_set_current_user( get_current_user_id() );
 									printf( __( 'Hello, %s!%sYou are already logged in.', 'maidz' ), $user->display_name, '<br />' );
@@ -71,19 +71,19 @@ $http_referer = $_SERVER['HTTP_REFERER'] ?? '';
 											<label for="host-name">
 												<?php _e( 'Full name', 'maidz' ) ?>
 											</label>
-											<input id="host-name" type="text" name="maid-name">
+											<input id="host-name" type="text" name="host-name">
 										</div>
 										<div class="input__wrapper">
 											<label for="host-email">
 												<?php _e( 'Email Address', 'maidz' ) ?>
 											</label>
-											<input id="host-email" type="email" name="maid-email">
+											<input id="host-email" type="email" name="host-email">
 										</div>
 										<div class="input__wrapper">
 											<label for="host-password">
 												<?php _e( 'Password', 'maidz' ) ?>
 											</label>
-											<input id="host-password" class="last" type="password" name="maid-password">
+											<input id="host-password" class="last" type="password" name="host-password">
 											<div class="eye__wrapper">
 												<img class="eye" width="38" height="30" src="<?php echo THEME_URI ?>/static/img/ico/eye.svg" alt="">
 											</div>

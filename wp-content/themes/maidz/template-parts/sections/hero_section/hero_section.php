@@ -42,11 +42,11 @@ $happy_hosts_count	= $section['happy_hosts_count'] ?: 25000;
 		?>
 
 		<div class="hero__buttons">
-			<button class="button white find">
-				Find Your Next Cleaner
-			</button>
-			<a href="<?php echo get_the_permalink( 41 ) ?>" class="button white sign-up">
-				Sign Up Now
+			<a href="<?php echo get_the_permalink( 41 ) ?>" class="button white find">
+				<?php _e( 'Find Your Next Maid', 'maidz' ) ?>
+			</a>
+			<a href="<?php echo get_the_permalink( 45 ) ?>" class="button white sign-up">
+				<?php _e( 'Join Us Now', 'maidz' ) ?>
 			</a>
 		</div>
 		<div class="hero__bottom">

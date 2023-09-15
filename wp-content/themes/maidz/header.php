@@ -81,10 +81,10 @@ $logo		= carbon_get_theme_option( 'header_logo' );
 
 							<div class="header__buttons">
 								<a href="<?php echo get_the_permalink( 43 ) ?>" class="button transparent sign-in" type="button">
-									Sign In
+									<?php _e( 'Sign In', 'maidz' ) ?>
 								</a>
 								<a href="<?php echo get_the_permalink( 45 ) ?>" class="button sign-up" type="button">
-									Sign Up
+									<?php _e( 'Sign Up', 'maidz' ) ?>
 								</a>
 							</div>
 						</div>
