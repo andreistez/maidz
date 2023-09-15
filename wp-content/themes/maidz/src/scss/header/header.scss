@@ -230,12 +230,24 @@
 
 	&__user {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		column-gap: 15px;
+		margin-top: 30px;
+
+		@media (min-width: $lg) {
+			flex-direction: row;
+			column-gap: 15px;
+			margin-top: 0
+		}
 
 		span {
 			font-weight: $fw-bold;
-			color: $accent
+			color: $accent;
+			margin-bottom: 10px;
+
+			@media (min-width: $lg) {
+				margin-bottom: 0
+			}
 		}
 	}
 }
