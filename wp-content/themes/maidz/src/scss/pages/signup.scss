@@ -320,38 +320,6 @@
 			font-size: 20px;
 		}
 	}
-
-	// Nextend plugin buttons
-	div.nsl-container {
-		&-block {
-			&-fullwidth .nsl-container-buttons,
-			.nsl-container-buttons {
-				a {
-					border-radius: 12px;
-					border: 1px solid #8b8b8b;
-					margin: 0
-				}
-			}
-		}
-
-		.nsl-container-buttons {
-			padding: 0;
-			margin-right: 50px
-		}
-
-		.nsl-button-default div.nsl-button-label-container {
-			font-family: $ff;
-			font-size: $fs-lg
-		}
-
-		.nsl-button-google[data-skin="light"] {
-			border-radius: 12px;
-			border: 1px solid #8b8b8b;
-			height: 56px;
-			align-items: center;
-			box-shadow: -5px 2px 17px 1px rgba(0, 0, 0, 0.25)
-		}
-	}
 }
 
 .signup-header {

@@ -64,22 +64,6 @@ $http_referer = $_SERVER['HTTP_REFERER'] ?? '';
 											<?php _e( 'Sign up', 'maidz' ) ?>
 										</a>
 									</div>
-									<div class="signin__account_bottom">
-								<span class="signin__account_text">
-									<?php _e( 'Sign In with', 'maidz' ) ?>
-								</span>
-									</div>
-								</div>
-								<div class="signin__integrations">
-									<button class="integration">
-										<img src="<?php echo THEME_URI ?>/static/img/ico/fb.svg" width="45" height="45" alt="">
-									</button>
-									<button class="integration">
-										<img src="<?php echo THEME_URI ?>/static/img/ico/linked.svg" width="45" height="45" alt="">
-									</button>
-									<button class="integration">
-										<img src="<?php echo THEME_URI ?>/static/img/ico/google.svg" width="45" height="45" alt="">
-									</button>
 								</div>
 							</div>
 						</div>

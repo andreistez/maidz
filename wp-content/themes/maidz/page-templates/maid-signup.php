@@ -51,16 +51,6 @@ $http_referer = $_SERVER['HTTP_REFERER'] ?? '';
 						<?php
 						if( ! is_user_logged_in() ){
 							?>
-							<div class="signup__buttons">
-								<?php echo do_shortcode( '[nextend_social_login provider="google"]' ) ?>
-								<button class="signup__button">
-									<img src="<?php echo THEME_URI ?>/static/img/ico/fb.svg" width="30" height="30" alt="">
-									Sign up with facebook
-								</button>
-							</div>
-							<div class="signup__or">
-								-<?php _e( 'OR', 'maidz' ) ?>-
-							</div>
 							<div class="signup__form_wrapper">
 								<form id="form-register" class="signup__form" data-type="talent">
 									<fieldset>
